@@ -34,7 +34,7 @@ fn real_data_works() {
         ]
         .as_slice(),
     ] {
-        let de = Deserializer::from_slice(&data, u32::MAX).unwrap();
+        let de = Deserializer::from_slice(data, u32::MAX).unwrap();
         let value = serde_json::Value::deserialize(de).unwrap();
         std::eprintln!("{}", serde_json::to_string_pretty(&value).unwrap());
     }
