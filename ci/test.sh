@@ -2,7 +2,6 @@
 
 main() {
     set -ex
-    os="$1"
     workdir="$(mktemp -d)"
     trap cleanup EXIT
     cargo_clippy
