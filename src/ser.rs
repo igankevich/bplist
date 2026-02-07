@@ -139,6 +139,12 @@ impl Serializer {
     }
 }
 
+impl Default for Serializer {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<'a> serde::ser::Serializer for &'a mut Serializer {
     type Ok = ();
     type Error = Infallible;
